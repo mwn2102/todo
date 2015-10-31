@@ -1,0 +1,4 @@
+<%= simple_form_for [@list, @list.tasks.build],  html: {class: 'form-inline'} do |f| %>
+    <%=f.input :item, label: "New Task:" %>
+    <%=f.button :submit %>
+<%end%>

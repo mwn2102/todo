@@ -1,0 +1,36 @@
+<h1 id="list_header"><%= @list.name %> </h1>
+
+<% if @list.tasks.any? %>
+    <ul> 
+    
+    <%@list.tasks.each do |task| %>
+    <div class="row">
+        <div class="col-sm-3">
+            <%=link_to complete_list_task_path(@list, task) do %>
+                <% if !task.completed? %>
+                    <%=fa_icon "square"%>
+                <% else %>
+                    <%=fa_icon "check-square"%>
+                <%end%>
+            <%end%>
+        </div>
+        <div id="tasks">
+        <div class="col-sm-5">
+            <li class="is_<%=task.completed%>"><%= task.item %></li>
+        </div>
+        <div class="col-sm-1">
+            <%= link_to "Delete", list_task_path(@list, task), method: :delete %>
+        </div>
+        </div>
+    </div>
+    <%end%>
+    </ul>
+<%end%>
+
+<div class="row">
+<div class="col-sm-4 col-sm-offset-4">
+<%=render "tasks/form" %>
+<%= link_to "Back", root_path %>
+</div>
+</div>
+
