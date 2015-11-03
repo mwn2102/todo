@@ -27,8 +27,21 @@ li {
     list-style: none;
 }
 
-#tasks {
-    background-color: red;
+div.box {
+    background: #f8b2b2; /* Old browsers */
+    background: -webkit-gradient(linear, left top, left bottom, from(#f8b2b2), to(#f06363)); /* Saf4+, Chrome */
+    background: -webkit-linear-gradient(top, #f8b2b2, #f06363); /* Chrome 10+, Saf5.1+ */
+    background: -moz-linear-gradient(top, #f8b2b2, #f06363); /* FF3.6 */
+    background: -ms-linear-gradient(top, #f8b2b2, #f06363); /* IE10 */
+    background: -o-linear-gradient(top, #f8b2b2, #f06363); /* Opera 11.10+ */
+    background: linear-gradient(top, #f8b2b2, #f06363); /* W3C */ 
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#f8b2b2", endColorstr="#f06363",GradientType=0 ); /* IE6-9 */ 
+    width: 400px;
+    margin: auto;
+}
+
+table {
+    // background-color: blue;
 }
 
 .is_true {
@@ -38,4 +51,13 @@ li {
 
 .col-sm-3 a {
     color: inherit;
+}
+
+.form {
+    width: 400px;;
+    margin: auto;
+}
+
+#back_link {
+    text-align: center;
 }
