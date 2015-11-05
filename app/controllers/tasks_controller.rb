@@ -25,8 +25,16 @@ class TasksController < ApplicationController
         redirect_to list_path(@list)
     end
     
+    def update_row_order
+        @task = Task.find(task_params[:task_id])
+        @task.row_order_position = task_params[:row_order_position]
+        @task.save
+        render nothing: true # this is a POST action, updates sent via AJAX, no view rendered
+    end
+
+    
     private
         def task_params
-            params.require(:task).permit(:item)
+            params.require(:task).permit(:task_id, :item, :row_order_position)
         end
 end

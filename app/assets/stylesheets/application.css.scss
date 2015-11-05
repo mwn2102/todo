@@ -19,6 +19,10 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+body {
+    background-color: #CEC3C3;
+}
+
 #list_header {
      text-align: center;   
 }
@@ -36,12 +40,14 @@ div.box {
     background: -o-linear-gradient(top, #f8b2b2, #f06363); /* Opera 11.10+ */
     background: linear-gradient(top, #f8b2b2, #f06363); /* W3C */ 
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#f8b2b2", endColorstr="#f06363",GradientType=0 ); /* IE6-9 */ 
-    width: 400px;
+    max-width: 600px;
     margin: auto;
+    border-radius: 12px;
+
 }
 
-table {
-    // background-color: blue;
+.table-hover > tbody > tr:hover {
+    background-color: #A9B9CE;
 }
 
 .is_true {
@@ -58,6 +64,23 @@ table {
     margin: auto;
 }
 
-#back_link {
+#move {
     text-align: center;
+}
+
+.ui-sortable-helper {
+    display: table;
+}
+
+#the_box, #the_delete {
+    width: 15%;
+}
+
+#the_item {
+    width: 70%;
+}
+
+// selects all td in the first table row under .table
+.table tr:first-child td {
+    border-top: none !important;
 }

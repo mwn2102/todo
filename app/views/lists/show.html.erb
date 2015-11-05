@@ -2,10 +2,10 @@
 
 <% if @list.tasks.any? %>
     <div class="box">
-    <table class="table table-hover"> 
-    <%@list.tasks.each do |task| %>
-    <tr class="row">
-        <td>
+    <table class="table table-hover" id="sortable"> 
+    <%@tasks.each do |task| %>
+    <tr data-todo-id=<%= "#{task.id}" %> class="todo" >
+        <td id="the_box">
             <%=link_to complete_list_task_path(@list, task), method: :patch do %>
                 <% if !task.completed? %>
                     <%=fa_icon "square"%>
@@ -14,10 +14,10 @@
                 <%end%>
             <%end%>
         </td>
-        <td>
-            <li class="is_<%=task.completed%>"><%= task.item %></li>
+        <td class="is_<%=task.completed%>" id="the_item">
+            <%= task.item %>
         </td>
-        <td>
+        <td id="the_delete">
             <%= link_to "Delete", list_task_path(@list, task), method: :delete %>
         </td>
     </tr>
@@ -29,6 +29,6 @@
 <div class="form">
 <%=render "tasks/form" %>
 </div>
-<div id="back_link">
+<div id="move">
 <%= link_to "Back", root_path %>
 </div>

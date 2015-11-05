@@ -17,6 +17,9 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'simple_form'
 gem 'bootstrap-sass'
 gem 'font-awesome-rails'
+gem 'ranked-model'
+gem 'jquery-ui-rails'
+
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

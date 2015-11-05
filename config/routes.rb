@@ -4,8 +4,13 @@ Rails.application.routes.draw do
   resources :lists do
     resources :tasks do
       patch 'complete', on: :member
+      # post :update_row_order, on: :collection
     end
   end
+  
+  # /things/update_row_order(.:format) things#update_row_order
+  post 'tasks/update_row_order' => 'tasks#update_row_order'
+  
   
   
   

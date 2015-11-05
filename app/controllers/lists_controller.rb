@@ -17,6 +17,8 @@ class ListsController < ApplicationController
     end
     
     def show
+        #instead of @list.tasks.each in controller used:
+        @tasks = @list.tasks.rank(:row_order).all
     end
     
     def edit
